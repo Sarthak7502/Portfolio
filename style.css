@@ -460,79 +460,89 @@ body.light-mode footer a {
 
 /* --- Projects Section --- */
 #projects {
-    padding: 4rem 2rem;
-    color: white;
+  padding: 4rem 2rem;
+  color: white;
 }
 
 #projects h2 {
-    text-align: center; /* Ensures the text content of this header is horizontally centered */
-    font-size: 2rem;
-    margin-bottom: 3rem;
-    margin-top: 2rem; /* Add some space above the header for consistent spacing */
-    color: #0ff;
-    text-shadow: 0 0 10px #0ff;
+  text-align: center;
+  font-size: 2rem;
+  margin: 2rem 0 3rem;
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff;
 }
 
+/* --- Card --- */
 .card {
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    padding: 1.5rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 1.5rem;
+  min-width: 250px;
+  flex-shrink: 0;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
 }
 
 .card h3 {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .card a {
-    display: inline-block;
-    margin-top: 1rem;
-    color: #0ff;
-    text-decoration: none;
-    font-weight: bold;
+  display: inline-block;
+  margin-top: 1rem;
+  color: #0ff;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
 }
 
 .card a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
-/* --- Carousel --- */
+/* --- Carousel Container --- */
 .carousel-container {
-    overflow: hidden;
-    width: 100%;
-    position: relative;
-    padding: 2rem 1rem;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 2rem 0;
 }
 
-.carousel-container:hover .carousel {
-    animation-play-state: paused;
-}
-
+/* --- Carousel Scroll Animation --- */
 .carousel {
-    display: flex;
-    gap: 2rem;
-    animation: slide 20s linear infinite;
-    will-change: transform;
-    padding-bottom: 1rem;
+  display: flex;
+  gap: 1.5rem;
+  animation: scroll 30s linear infinite;
+  width: max-content;
 }
 
-.carousel .card {
-    min-width: 300px;
-    flex-shrink: 0;
-    margin: 0.5rem;
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
-@keyframes slide {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .carousel {
+    animation: scroll 40s linear infinite;
+  }
+
+  .card {
+    min-width: 220px;
+    padding: 1rem;
+  }
 }
 
 /* --- Education Section --- */
