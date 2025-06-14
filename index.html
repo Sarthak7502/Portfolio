@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sarthak Jain | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+</head>
+<body class="light-mode">
+  <div id="tsparticles"></div>
+  <div id="lightInteractiveBg"></div>
+  <div id="bubbleContainer"></div>
+
+  <nav class="navbar">
+  <h1 class="glow">Sarthak Jain</h1>
+  <button class="nav-toggle" id="navToggle">☰</button>
+  <button id="modeToggle" class="mode-button">🌓</button>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#trynew" class="glow-border">Try New</a></li>
+  </ul>
+</nav>
+
+  <button id="backToTop" title="Go to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M5 15l7-7 7 7" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </button>
+
+  <section id="home">
+  <div class="intro-card">
+    <div class="intro">
+      <h2><span id="typed"></span></h2>
+      <p class="subtitle">Explorer | Creator | Future-Ready</p>
+
+      <h3 class="name-title">
+        Sarthak Jain <span class="gold-tick">&#10003;</span>
+        <a href="https://www.linkedin.com/in/jainsarthak02/" target="_blank" class="linkedin-icon" aria-label="LinkedIn">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+        </a>
+      </h3>
+    </div>
+
+    <div class="intro-content">
+      <p>👋 I’m an MCA student and Customer Success Executive at GoSharpener, turning everyday friction into smooth, impactful user experiences.</p>
+
+      <p>🚀 What fuels me is <strong>growth</strong>—in systems, people, and purpose. I believe tech should solve real problems and scale with empathy.</p>
+
+      <h4>💼 What I bring to the table:</h4>
+      <ul>
+        <li>🗣️ Clear communication & user empathy</li>
+        <li>🧠 Strong systems thinking</li>
+        <li>📚 Constant learning & sharp execution</li>
+        <li>🛠️ A builder’s mindset, not just a follower's</li>
+      </ul>
+
+      <h4>📍 Currently exploring:</h4>
+      <ul>
+        <li>🤖 AI & automation tools</li>
+        <li>🧩 No-code development</li>
+        <li>💼 SaaS customer journeys</li>
+        <li>⚙️ Process simplification at scale</li>
+      </ul>
+
+      <p>🤝 Let’s connect if you're <strong>building, scaling, or thinking differently</strong>—I’m always open to bold ideas and smarter systems.</p>
+    </div>
+  </div>
+</section>
+
+
+  <section id="projects">
+  <h2 class="section-title">Projects & Achievements</h2>
+  <div class="carousel-container">
+    <div class="carousel" id="projectCarousel">
+
+      <div class="card" style="text-align: center;">
+        <h3>Portfolio Website</h3>
+        <p>This animated, futuristic personal website built entirely from scratch.</p>
+        <a href="#" target="_blank">Explore</a>
+      </div>
+
+      <div class="card" style="text-align: center;">
+        <h3>Sentiment Analysis Research Paper</h3>
+        <p>Presented at INDIACom 2025 – Published in IEEE Xplore. Topic: Public Sentiment on AI.</p>
+        <span><strong>Venue:</strong> 12th Intl. Conf. on Sustainable Development & AI Perception (BVICAM)</span>
+      </div>
+
+      <div class="card" style="text-align: center;">
+        <h3>Gesture-Based Media Controller</h3>
+        <p>Hands-free YouTube control using hand gestures with Python, OpenCV, and MediaPipe.</p>
+        <span><strong>Skills:</strong> Computer Vision · Python · Web Automation</span>
+      </div>
+
+      <div class="card" style="text-align: center;">
+        <h3>Voice-Gmail Assistant</h3>
+        <p>Voice-controlled Gmail assistant using AI to simplify email tasks hands-free.</p>
+        <span><strong>Skills:</strong> Software Dev · Cloud Computing · Data Visualization</span>
+      </div>
+
+      <div class="card" style="text-align: center;">
+        <h3>Startup Business Plan</h3>
+        <p>Created a detailed business plan for startup development during internship at Internshape.</p>
+        <span><strong>Skills:</strong> Business Growth · Market Research · Strategy</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <section id="education">
+  <h2 class="section-title">Education</h2>
+  <div class="timeline-centered">
+    <div class="timeline-item left">
+      <div class="dot"></div>
+      <div class="content">
+        <h3>Vivekananda Institute of Professional Studies</h3>
+        <p>MCA – Masters Of Computer Applications</p>
+        <span>Oct 2023 – May 2025</span>
+      </div>
+    </div>
+
+    <div class="timeline-item right">
+      <div class="dot"></div>
+      <div class="content">
+        <h3>Jagannath University</h3>
+        <p>BCA – Bachelor Of Computer Applications</p>
+        <span>Nov 2020 – July 2023</span>
+      </div>
+    </div>
+
+    <div class="timeline-item left">
+      <div class="dot"></div>
+      <div class="content">
+        <h3>ASN Senior Secondary School - India (CBSE)</h3>
+        <p>Commerce with Information Practices</p>
+        <span>2006 – 2020</span>
+      </div>
+    </div>
+</section>
+
+  <section id="experience">
+  <h2 class="section-title">Experience</h2>
+  <div class="timeline-centered">
+
+    <div class="timeline-item left">
+      <div class="dot"></div>
+      <div class="content">
+        <h3>Client Success Executive – GoSharpener</h3>
+        <p>Empowering students with skills through impactful school partnerships & digital engagement.</p>
+        <span>Dec 2024 – Present · Delhi, India · On-site</span>
+      </div>
+    </div>
+
+    <div class="timeline-item right">
+      <div class="dot"></div>
+      <div class="content">
+        <h3>Associate Product Consultant – Cvent (Internship)</h3>
+        <p>Contributed to product configuration and support during the event lifecycle, ensuring client satisfaction.</p>
+        <span>Aug 2024 – Oct 2024 · Gurugram, Haryana, India · On-site</span>
+      </div>
+    </div>
+
+    <div class="timeline-item left">
+      <div class="dot"></div>
+      <div class="content">
+        <h3>VAPT Intern – CyberSRC® Consultancy</h3>
+        <p>Conducted vulnerability assessments and penetration testing, collaborating with security teams to identify threats.</p>
+        <span>Jan 2023 – Jan 2024 · Noida, Uttar Pradesh · Hybrid</span>
+        <p><strong>Skills:</strong> Vulnerability Assessment · Cybersecurity Tools · Penetration Testing · Problem Analysis</p>
+      </div>
+    </div>
+
+    <div class="timeline-item right">
+      <div class="dot"></div>
+      <div class="content">
+        <h3>Cloud Intern – Thotnr Consulting</h3>
+        <p>Worked with Azure deployments and optimization, gaining hands-on experience with cloud environments.</p>
+        <span>Feb 2022 – Jun 2022 · Delhi, India</span>
+        <p><strong>Skills:</strong> Microsoft Azure · Azure Optimization · Collaborative Problem Solving</p>
+      </div>
+    </div>
+
+    <div class="timeline-item left">
+      <div class="dot"></div>
+      <div class="content">
+        <h3>Senior Sales Executive – Go Genius Solutions</h3>
+        <p>Delivered HR, Admin, and IT solutions for corporate clients including onboarding kits, events, and office supplies.</p>
+        <span>Aug 2021 – Jan 2022 · New Delhi, India</span>
+        <p><strong>Skills:</strong> HR Management · Event Planning · Virtual Admin Support · IT Management</p>
+      </div>
+    </div>
+
+    <div class="timeline-item right">
+      <div class="dot"></div>
+      <div class="content">
+        <h3>Intern – Internshape (IESD Pvt Ltd)</h3>
+        <p>Trained in crafting business plans for startups, gaining entrepreneurial and business growth knowledge.</p>
+        <span>Feb 2021 – Jul 2021 · Noida, Uttar Pradesh</span>
+        <p><strong>Skills:</strong> Business Development · Startup Strategy · Problem Solving</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <section id="contact">
+  <h2 class="section-title">Contact Me</h2>
+  <div class="contact-card">
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" name="from_name" required />
+      <input type="email" placeholder="Your Email" name="reply_to" required />
+
+      <select name="service" required>
+        <option value="" disabled selected>Select a Service</option>
+        <option value="portfolio">Portfolio Website</option>
+        <option value="game">Game Development</option>
+        <option value="freelance">Freelance Collaboration</option>
+        <option value="consult">Sustainability App Consult</option>
+        <option value="other">Other</option>
+      </select>
+
+      <textarea placeholder="Your Message" name="message" required></textarea>
+
+      <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+        <button type="submit">Send</button>
+        <button type="button" id="clearFormBtn">🧹 Clear</button>
+      </div>
+    </form>
+    <p id="formMsg"></p>
+  </div>
+</section>
+
+
+  <footer>
+    <p>© 2025 Sarthak Jain</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

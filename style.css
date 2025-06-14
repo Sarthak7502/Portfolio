@@ -1,0 +1,1041 @@
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+
+/* --- Base Body Styles --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    scroll-behavior: smooth;
+    /* FIX: Increased padding-top to clear the fixed navbar on all content */
+    padding-top: 100px; /* Adjust this value if your navbar height changes */
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1rem;
+    min-height: 100vh;
+}
+
+.intro-card {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 2rem;
+    max-width: 800px;
+    width: 100%;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.15);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    text-align: center;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Light mode adjustments */
+body.light-mode .intro-card { /* Changed from @media (prefers-color-scheme: light) to body.light-mode */
+    background: rgba(0, 0, 0, 0.05);
+    color: #000; /* black text */
+    border: 1px solid rgba(255, 215, 0, 0.15);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.08);
+}
+
+body.light-mode .subtitle { /* Changed from @media (prefers-color-scheme: light) to body.light-mode */
+    color: #111; /* Darker grey for light mode */
+}
+
+body.light-mode .intro-content h4, /* Changed from @media (prefers-color-scheme: light) to body.light-mode */
+body.light-mode .gold-tick { /* Changed from @media (prefers-color-scheme: light) to body.light-mode */
+    color: goldenrod;
+}
+
+body.light-mode .intro-content ul li { /* Changed from @media (prefers-color-scheme: light) to body.light-mode */
+    color: #000; /* Ensure list items are black in light mode */
+}
+
+
+.intro h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #ddd; /* Light grey for dark mode subtitle */
+    margin-bottom: 0.3rem;
+}
+
+.name-title {
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.gold-tick {
+    color: gold; /* Gold for dark mode tick */
+    font-size: 1.2rem;
+}
+
+/* LinkedIn icon styling */
+.linkedin-icon img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    filter: brightness(1.1) contrast(1.1);
+    transition: transform 0.3s ease;
+    border-radius: 4px;
+}
+
+.linkedin-icon:hover img {
+    transform: scale(1.1);
+}
+
+.intro-content {
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.intro-content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.intro-content h4 {
+    margin-top: 1.4rem;
+    color: gold; /* Gold for dark mode h4 */
+}
+
+.intro-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.intro-content ul li {
+    margin: 0.3rem 0;
+    padding-left: 0.5rem;
+}
+
+/* Inherit Orbitron font for all headers and specific nav elements */
+h1, h2, h3, h4, h5, h6,
+.navbar h1,
+.nav-links li a,
+.section-title { /* Added .section-title here */
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* --- Navbar Styles --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem; /* 16px top/bottom, 24px left/right */
+    background-color: rgba(0, 0, 0, 0.85);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box; /* Ensures padding is included in width calculation */
+}
+
+/* Glowing border button (Used for mode toggle and possibly others) */
+.glow-border {
+    position: relative;
+    display: inline-block;
+    padding: 8px 16px;
+    border: 2px solid currentColor;
+    border-radius: 6px;
+    font-weight: bold;
+    color: inherit;
+    transition: 0.3s ease;
+    z-index: 1;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.glow-border::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(45deg, #0ff, #00f6ff, #00ffd9, #0ff);
+    z-index: -1;
+    filter: blur(10px);
+    opacity: 0.7;
+    transition: 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-border:hover::before {
+    opacity: 1;
+}
+
+.glow-border::after { /* Prevents underline on nav link glow-border */
+    display: none !important;
+}
+
+body.light-mode .glow-border {
+    color: #000;
+    border-color: #000;
+}
+
+body.dark-mode .glow-border {
+    color: #fff;
+    border-color: #fff;
+}
+
+.nav-links li a.glow-border::after {
+    display: none !important;
+}
+
+/* Glowing Brand Name */
+.navbar h1.glow {
+    font-size: 1.8rem;
+    color: #0ff;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+    animation: flicker 2s infinite alternate;
+    margin: 0;
+}
+
+@keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.85; text-shadow: 0 0 15px #0ff; }
+    100% { opacity: 1; text-shadow: 0 0 10px #0ff, 0 0 25px #0ff; }
+}
+
+/* --- Mobile Navigation Toggle (Hamburger) --- */
+.nav-toggle {
+    display: none; /* Hidden by default, shown on mobile */
+    font-size: 2rem;
+    color: #0ff;
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 1101; /* Above navbar */
+}
+
+/* Hamburger icon */
+.hamburger {
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Nav link styles - Base for both desktop and mobile */
+#navLinks a {
+    position: relative;
+    text-decoration: none;
+    padding: 8px 16px;
+    display: inline-block;
+    transition: color 0.3s ease;
+    font-size: 1rem;
+    color: inherit;
+}
+
+#navLinks a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    width: 0%;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.3s ease-in-out;
+}
+
+#navLinks a:hover::after {
+    width: 100%;
+}
+
+/* Light mode styles for nav elements */
+body.light-mode .hamburger,
+body.light-mode #navLinks a {
+    color: #000;
+}
+
+body.light-mode #navLinks {
+    background-color: #fff;
+}
+
+/* Dark mode styles for nav elements */
+body.dark-mode .hamburger,
+body.dark-mode #navLinks a {
+    color: #fff;
+}
+
+/* Nav Links (Desktop) */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    margin-left: 1rem;
+    transition: max-height 0.3s ease-in-out;
+}
+
+/* Nav Actions (mode toggle + menu icon) */
+.nav-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.mode-button {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #0ff;
+}
+
+/* --- Responsive Nav - Adjustments for Mobile View --- */
+@media screen and (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+        right: 1.5rem;
+        top: 1.2rem; /* Adjusted for better vertical alignment within navbar */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start; /* Aligns links to the left in mobile menu */
+        position: absolute;
+        top: 100%; /* Important: Starts directly below the navbar */
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        max-height: 0;
+        overflow: hidden;
+        z-index: 1100;
+    }
+
+    .nav-links.show {
+        max-height: 500px; /* Adjust if your mobile menu is taller */
+    }
+
+    .nav-links li {
+        width: 100%; /* Makes each list item take full width of the mobile menu */
+        padding: 0.75rem 1.5rem; /* Padding for the entire "row" of the menu item */
+        box-sizing: border-box; /* Include padding in the width */
+    }
+
+    .nav-links li a {
+        display: inline-block;
+        width: auto;
+        padding: 0; /* Remove padding from the anchor tag itself, it's on the LI */
+    }
+
+    .nav-links li a::after {
+        bottom: 4px;
+    }
+
+    .nav-actions {
+        position: absolute; /* Position relative to navbar */
+        top: 1.2rem; /* Adjusted for better vertical alignment within navbar */
+        right: 1rem;
+        flex-direction: row-reverse; /* Puts mode toggle to the left of hamburger */
+    }
+}
+
+/* --- Back to Top Button --- */
+#backToTop {
+    display: none;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 999;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #0ff;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+#backToTop:hover {
+    background: #00cccc;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+}
+
+#backToTop svg {
+    stroke: #000;
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+#backToTop:hover svg {
+    transform: translateY(-3px);
+}
+
+/* --- General Section Styles --- */
+section {
+    padding: 4rem 2rem; /* General padding for all sections */
+    position: relative;
+}
+
+.intro {
+    text-align: center;
+}
+
+.highlight {
+    color: #0ff;
+    font-weight: bold;
+    text-shadow: 0 0 5px #0ff;
+}
+
+/* --- Form Basic Styles (Generic, often overridden by specific sections) --- */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px; /* Constrain form width */
+    gap: 1rem;
+}
+form input,
+form textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+}
+form button {
+    background: #0ff;
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* --- Grid Layout --- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+/* --- Footer Styles --- */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #111;
+    color: white;
+}
+
+footer a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #0ff;
+}
+
+body.light-mode footer {
+    background-color: #fff;
+    color: #000;
+}
+
+body.light-mode footer a {
+    color: #000;
+}
+
+/* --- Projects Section --- */
+#projects {
+    padding: 4rem 2rem;
+    color: white;
+}
+
+#projects h2 {
+    text-align: center; /* Ensures the text content of this header is horizontally centered */
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    margin-top: 2rem; /* Add some space above the header for consistent spacing */
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff;
+}
+
+.card {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #0ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+/* --- Carousel --- */
+.carousel-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding: 2rem 1rem;
+}
+
+.carousel-container:hover .carousel {
+    animation-play-state: paused;
+}
+
+.carousel {
+    display: flex;
+    gap: 2rem;
+    animation: slide 20s linear infinite;
+    will-change: transform;
+    padding-bottom: 1rem;
+}
+
+.carousel .card {
+    min-width: 300px;
+    flex-shrink: 0;
+    margin: 0.5rem;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* --- Education Section --- */
+#education {
+    padding: 4rem 2rem;
+    color: white;
+}
+
+#education h2 {
+    text-align: center; /* Ensures the text content of this header is horizontally centered */
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    margin-top: 2rem; /* Add some space above the header for consistent spacing */
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff;
+}
+
+.timeline-centered {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline-centered::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(#0ff, #0ff);
+    box-shadow: 0 0 20px #0ff;
+    z-index: 1;
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+}
+
+.timeline-item.left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item.right {
+    left: 50%;
+    text-align: left;
+}
+
+.timeline-item .content {
+    background: rgba(0, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-item .content:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+}
+
+.timeline-item h3 {
+    margin: 0;
+    color: #0ff;
+}
+
+.timeline-item p {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+}
+
+.timeline-item span {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    display: block;
+}
+
+.timeline-item .dot {
+    position: absolute;
+    top: 1.5rem;
+    width: 20px;
+    height: 20px;
+    background: #0ff;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
+    z-index: 3;
+}
+
+.timeline-item.left .dot {
+    right: -10px;
+}
+
+.timeline-item.right .dot {
+    left: -10px;
+}
+
+/* Mobile timeline adjustments */
+@media (max-width: 768px) {
+    .timeline-centered::before {
+        left: 1rem;
+        transform: none;
+    }
+
+    .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        text-align: left;
+        padding: 1rem 1rem 1rem 3rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .timeline-item .content {
+        margin-left: 1.5rem;
+    }
+
+    .timeline-item .dot {
+        left: 0.5rem !important;
+        right: auto;
+    }
+}
+
+/* --- Experience Section --- */
+#experience {
+    padding: 4rem 2rem;
+    color: white;
+}
+
+#experience h2 {
+    text-align: center; /* Ensures the text content of this header is horizontally centered */
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    margin-top: 2rem; /* Add some space above the header for consistent spacing */
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff;
+}
+
+/* --- Contact Section --- */
+#contact {
+    padding: 4rem 2rem;
+    color: white;
+}
+
+#contact h2 {
+    text-align: center; /* Ensures the text content of this header is horizontally centered */
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    margin-top: 2rem; /* Add some space above the header for consistent spacing */
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center children vertically along the main axis */
+    align-items: center; /* Center children horizontally along the cross axis */
+    padding: 0; /* Remove default spacing */
+    min-height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+    /* The global body padding-top handles navbar clearance for the section start */
+}
+
+/* Contact Card with Tilt + Glass */
+.contact-card {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 12px 40px rgba(0, 255, 255, 0.25);
+    border-radius: 20px;
+    padding: 40px 30px;
+    width: 90%;
+    max-width: 500px;
+    transition: transform 0.3s ease;
+    transform-style: preserve-3d;
+    /* This element is a direct child of #contact, so it will be centered horizontally
+        by #contact's 'align-items: center'. Its own flex properties center its internal content. */
+    display: flex; /* Make the card a flex container */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally within the card */
+    justify-content: center; /* Center children vertically within the card (if height allows) */
+    position: relative;
+    z-index: 5;
+}
+
+/* Centering form contents inside card */
+.contact-card form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the input fields and button horizontally within the form */
+    justify-content: center;
+    width: 100%; /* Ensure the form takes up the full width of the card's padding area */
+}
+
+/* Input + Select + Textarea Styling */
+#contactForm input,
+#contactForm select,
+#contactForm textarea {
+    width: calc(100% - 32px); /* Adjust width to account for padding (40px total padding in contact-card) */
+    max-width: 400px; /* Add a max-width to the fields for better aesthetics */
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    box-shadow: inset 0 0 6px rgba(0, 255, 255, 0.2);
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Placeholder + Modes */
+#contactForm input::placeholder,
+#contactForm textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+body.light-mode #contactForm input,
+body.light-mode #contactForm select,
+body.light-mode #contactForm textarea {
+    background: rgba(0, 0, 0, 0.05);
+    color: #000;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+}
+body.light-mode #contactForm input::placeholder,
+body.light-mode #contactForm textarea::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+/* Select dropdown arrow fix */
+#contactForm select {
+    appearance: none;
+    -webkit-appearance: none;
+    /* Updated SVG for better rendering consistency */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff' d='M6 8L0 2h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1); /* Dark mode background */
+}
+
+/* Light mode select arrow and background */
+body.light-mode #contactForm select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23000000' d='M6 8L0 2h12z'/%3E%3C/svg%3E"); /* Black arrow for light mode */
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.05); /* Light mode background */
+}
+
+/* Fix for dropdown options visibility in dark mode */
+#contactForm select option {
+    background-color: #1a1a1a; /* Dark background for options */
+    color: #fff;               /* White text for options */
+}
+
+/* Ensure light mode options are also styled */
+body.light-mode #contactForm select option {
+    background-color: #fff; /* Light background for options */
+    color: #000;               /* Dark text for options */
+}
+
+/* Button */
+#contactForm button {
+    padding: 14px 28px;
+    background: linear-gradient(to right, #00f0ff, #00ffe1);
+    color: #000;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 255, 255, 0.3);
+    transition: transform 0.2s ease, background 0.3s ease;
+    width: auto; /* Allow button to shrink to content if needed */
+    max-width: 200px; /* Set a reasonable max-width for the button */
+}
+#contactForm button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to right, #00c4ff, #0ff);
+}
+
+/* Submission Message */
+#formMsg {
+    margin-top: 18px;
+    font-weight: 600;
+    color: #0ff;
+    font-size: 1rem;
+}
+
+/* --- Dark/Light Mode General Styles --- */
+body.light-mode {
+    background-color: #f9f9f9;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+}
+
+body.light-mode .navbar {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+body.light-mode .nav-links li a {
+    color: #000;
+}
+
+body.light-mode .nav-links li a:hover {
+    color: #00cccc;
+}
+
+body.light-mode footer {
+    background-color: #fff;
+    color: #000;
+}
+
+body.light-mode footer a {
+    color: #000;
+}
+
+/* --- Light Mode Specific Section/Element Styling --- */
+
+/* Timeline Light Mode */
+body.light-mode .timeline-centered::before {
+    background: #ccc;
+    box-shadow: none;
+}
+
+body.light-mode .timeline-item .dot {
+    background: #333;
+    box-shadow: none;
+}
+
+body.light-mode .timeline-item .content {
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    backdrop-filter: none;
+    color: #333;
+}
+
+body.light-mode .timeline-item h3 {
+    color: #111;
+}
+
+body.light-mode .timeline-item span {
+    color: #555;
+    opacity: 1;
+}
+
+/* Heading Colors in Light Mode */
+body.light-mode #education h2,
+body.light-mode #projects h2,
+body.light-mode #experience h2,
+body.light-mode .section-title { /* Applied to all h2 and .section-title in light mode */
+    color: #222;
+    text-shadow: none;
+}
+
+/* Hide dark-mode particles in light mode */
+body.light-mode #particles-js { /* Check if this ID is correct; your JS uses #tsparticles */
+    display: none;
+}
+
+/* Light Mode Interactive Background */
+body.light-mode #lightInteractiveBg {
+    display: block; /* Shown only in light mode */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    pointer-events: none;
+    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), #ffffff, #d6f4ff, #acebff);
+    transition: background-position 0.2s ease-out, opacity 0.4s;
+    opacity: 1;
+    backdrop-filter: blur(10px) saturate(1.3);
+    animation: ambientGlow 20s ease-in-out infinite alternate;
+    box-shadow:
+        inset 0 0 100px rgba(0, 180, 255, 0.15),
+        inset 0 0 300px rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+}
+
+@keyframes ambientGlow {
+    0% {
+        box-shadow:
+            inset 0 0 120px rgba(0, 180, 255, 0.1),
+            inset 0 0 250px rgba(255, 255, 255, 0.15);
+    }
+    100% {
+        box-shadow:
+            inset 0 0 150px rgba(0, 180, 255, 0.2),
+            inset 0 0 300px rgba(255, 255, 255, 0.25);
+    }
+}
+
+body.light-mode #lightInteractiveBg::before,
+body.light-mode #lightInteractiveBg::after {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: floatOrbs 40s infinite ease-in-out;
+    opacity: 0.6;
+}
+
+body.light-mode #lightInteractiveBg::before {
+    top: -20%;
+    left: -30%;
+    animation-delay: 0s;
+}
+
+body.light-mode #lightInteractiveBg::after {
+    bottom: -25%;
+    right: -20%;
+    animation-delay: 15s;
+}
+
+@keyframes floatOrbs {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(20px, -30px) scale(1.05);
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+/* --- Bubble Container & Effects (Light Mode Only) --- */
+body.light-mode #bubbleContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1; /* Behind contact card, but above interactive background */
+}
+
+body.light-mode .bubble {
+    position: absolute;
+    bottom: -60px;
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle, rgba(0, 180, 255, 0.7), rgba(0, 180, 255, 0.3));
+    border-radius: 50%;
+    animation: floatUp linear forwards;
+    pointer-events: auto; /* Allows clicking */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    box-shadow: 0 0 8px rgba(0, 180, 255, 0.3);
+}
+
+body.light-mode .bubble:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+
+body.light-mode .splash {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #00d4ff;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: splashParticles 0.6s ease-out forwards;
+    pointer-events: none;
+    z-index: 4; /* Above bubbles, below contact card */
+}
+
+@keyframes splashParticles {
+    0% {
+        transform: scale(1) translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.1) translate(var(--x), var(--y));
+        opacity: 0;
+    }
+}
