@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore</title>
+  <link rel="stylesheet" href="explore.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <canvas id="bgCanvas"></canvas>
+  <div class="explore-header">
+    <h1>Explore Creations & Tools</h1>
+    <div class="explore-controls">
+      <input type="text" id="searchInput" placeholder="Search...">
+      <select id="categoryFilter">
+        <option value="all">All</option>
+        <option value="games">Games</option>
+        <option value="tools">Tools</option>
+        <option value="projects">Projects</option>
+      </select>
+    </div>
+    <a href="index.html" class="back-button">← Back to Home</a>
+  </div>
+
+  <div class="explore-grid" id="cardContainer">
+    <div class="card" data-category="games">
+      <h3>Logic Puzzle Game</h3>
+      <p>Challenge your brain with logical puzzles.</p>
+      <a href="#" class="card-button">Play Now</a>
+    </div>
+    <div class="card" data-category="tools">
+      <h3>Gesture Video Controller</h3>
+      <p>Control YouTube using hand gestures.</p>
+      <a href="#" class="card-button">Use Tool</a>
+    </div>
+    <div class="card" data-category="projects">
+      <h3>Voice Gmail</h3>
+      <p>Manage emails using just your voice.</p>
+      <a href="#" class="card-button">Try Now</a>
+    </div>
+    <!-- Add more cards as needed -->
+  </div>
+
+  <script src="explore.js"></script>
+</body>
+</html>
