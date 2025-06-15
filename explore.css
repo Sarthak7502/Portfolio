@@ -108,6 +108,11 @@ canvas#bgCanvas { /* Target your background canvas by its ID */
     text-decoration: none;
     font-weight: bold;
     transition: background 0.3s ease;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1em;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .card-button:hover {
@@ -115,6 +120,20 @@ canvas#bgCanvas { /* Target your background canvas by its ID */
     color: #fff;
 }
 
+button.card-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    outline: none;
+    background: #0ff;
+    color: #000;
+    padding: 0.6rem 1.2rem;
+    margin-top: 1rem;
+    line-height: normal;
+    height: auto;
+    vertical-align: middle;
+}
 
 /* --- NEW: Birthday Modal Styles --- */
 #birthdayModalOverlay {

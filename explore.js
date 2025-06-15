@@ -50,12 +50,12 @@ document.addEventListener("DOMContentLoaded", () => {
             stars = []; // Clear existing stars
             for (let i = 0; i < count; i++) {
                 stars.push({
-                    x: Math.random() * w,         // Random X position within canvas width
-                    y: Math.random() * h,         // Random Y position within canvas height
+                    x: Math.random() * w,        // Random X position within canvas width
+                    y: Math.random() * h,        // Random Y position within canvas height
                     r: Math.random() * 1.5 + 0.5, // Random radius between 0.5 and 2 pixels
                     dx: (Math.random() - 0.5) * 0.5, // Random horizontal movement speed (-0.25 to 0.25)
                     dy: (Math.random() - 0.5) * 0.5, // Random vertical movement speed (-0.25 to 0.25)
-                    interactive: false,           // Flag to indicate if star is currently interactive (white color)
+                    interactive: false,          // Flag to indicate if star is currently interactive (white color)
                     color: colors[Math.floor(Math.random() * colors.length)] // Assign a random VIBGYOR color
                 });
             }
@@ -134,7 +134,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const balloonContainer = document.getElementById("balloonContainer");
     const confettiContainer = document.getElementById("confettiContainer"); // Get confetti container
 
-    const SECRET_CODE = "NYSA20"; // The secret code to unlock the wish
+    const SECRET_CODE_NYSA = "NYSA20"; // Secret code for Nysa's wish
+    const SECRET_CODE_NEHA = "NEHA2122"; // Secret code for Neha
+    const SECRET_CODE_DIVPREET = "DIVBRO"; // Secret code for Neha
+    const SECRET_CODE_SISTER = "SISLOVE"; // New secret code for your sister
 
     // Directly set the song filename here
     const BIRTHDAY_SONG_FILE = "happy-birthday-357371.mp3";
@@ -340,8 +343,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             const enteredCode = codeInput.value.toUpperCase();
 
-            if (enteredCode === SECRET_CODE) {
-                codeMessage.textContent = "✅ Code accepted! Preparing your surprise...";
+            if (enteredCode === SECRET_CODE_NYSA) {
+                codeMessage.textContent = "✅ Code accepted! Preparing Nysa's surprise...";
                 codeMessage.style.color = "#00ff00";
 
                 setTimeout(() => {
@@ -360,7 +363,69 @@ document.addEventListener("DOMContentLoaded", () => {
                         Cheers to many more years of shared laughter, silly moments, and unforgettable memories. You're truly one in a million, and I'm so grateful to have you as my friend.<br><br>
                         Wishing you the happiest birthday ever! Keep shining bright! ✨🎂<br><br>
                         Lots of love,<br>
-                        Your Birthday Twin!
+                        Your Date Twin!
+                    `;
+                }, 1500);
+            } else if (enteredCode === SECRET_CODE_NEHA) {
+                codeMessage.textContent = "✅ Code accepted! Here's a special message for you Neha!";
+                codeMessage.style.color = "#00ff00";
+
+                setTimeout(() => {
+                    if (codeEntry) codeEntry.style.display = 'none';
+                    if (birthdayMessageContainer) birthdayMessageContainer.style.display = 'block';
+                    // No music for this code
+                    createBalloons(); // Still show balloons
+                    createConfetti(); // Still show confetti
+
+                    // Populate a different message
+                    if (birthdayWishHeading) birthdayWishHeading.textContent = "A Special Message Just for You! 🌟";
+                    if (birthdayWishText) birthdayWishText.innerHTML = `
+                        Dearest friend,<br><br>
+                        Life is so much brighter with you in it. Thank you for your kindness, your laughter, and your unwavering support. May your days be filled with endless happiness and incredible new experiences.<br><br>
+                        No matter what, remember how much you are appreciated and loved. Wishing you all the best!<br><br>
+                        With much warmth,<br>
+                        Mr. Popular CSE
+                    `;
+                }, 1500);
+            } else if (enteredCode === SECRET_CODE_DIVPREET) {
+                codeMessage.textContent = "✅ Code accepted! Here's a special message for Brother!";
+                codeMessage.style.color = "#00ff00";
+
+                setTimeout(() => {
+                    if (codeEntry) codeEntry.style.display = 'none';
+                    if (birthdayMessageContainer) birthdayMessageContainer.style.display = 'block';
+                    // No music for this code
+                    createBalloons(); // Still show balloons
+                    createConfetti(); // Still show confetti
+
+                    // Populate a different message
+                    if (birthdayWishHeading) birthdayWishHeading.textContent = "A Special Message Just for You Bro! 🌟";
+                    if (birthdayWishText) birthdayWishText.innerHTML = `
+                        Hey Brother,<br><br>
+                        It's awesome having you not just as a brother, but as one of my best friends too. From all our shared laughs and crazy adventures to being there for each other through thick and thin, you truly make life better.<br><br>
+                        Thanks for being you – reliable, fun, and always up for anything. Here's to many more years of good times and continuing to conquer everything together!<br><br>
+                        With much warmth,<br>
+                        Tour Bachpan Ka Dost
+                    `;
+                }, 1500);
+            }else if (enteredCode === SECRET_CODE_SISTER) { // New code for your sister!
+                codeMessage.textContent = "✅ Code accepted! For my dear sister...";
+                codeMessage.style.color = "#00ff00";
+
+                setTimeout(() => {
+                    if (codeEntry) codeEntry.style.display = 'none';
+                    if (birthdayMessageContainer) birthdayMessageContainer.style.display = 'block';
+                    // No music for this code
+                    createBalloons(); // Still show balloons
+                    createConfetti(); // Still show confetti
+
+                    // Populate the message for your sister
+                    if (birthdayWishHeading) birthdayWishHeading.textContent = "To My Amazing Sister! 💖";
+                    if (birthdayWishText) birthdayWishText.innerHTML = `
+                        My dearest sister,<br><br>
+                        Through thick and thin, you've always been there. Thank you for being not just a sister, but a wonderful friend. May your journey ahead be filled with dreams come true, strength, and joy.<br><br>
+                        I cherish our bond more than words can say. Love you always!<br><br>
+                        Your Broo
                     `;
                 }, 1500);
             } else {
