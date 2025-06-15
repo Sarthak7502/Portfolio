@@ -1,108 +1,442 @@
-body {
-  margin: 0;
-  font-family: 'Orbitron', sans-serif;
-  background: #000;
-  color: #0ff;
+/* Fonts & Reset */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;    /* Ensures HTML and BODY take full width */
+    height: 100%;   /* Ensures HTML and BODY take full height */
+    overflow-y: auto; /* IMPORTANT: Allows vertical scrolling for content that exceeds viewport height */
+    overflow-x: hidden; /* Prevents horizontal scrolling specifically */
+
+    font-family: 'Orbitron', sans-serif;
+    color: #0ff;
 }
 
-canvas#bgCanvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100vw;
-  height: 100vh;
-  background: black;
+canvas#bgCanvas { /* Target your background canvas by its ID */
+    position: fixed; /* Keep it fixed relative to the viewport */
+    top: 0;
+    left: 0;
+    width: 100vw;    /* Make the canvas element visually fill the viewport width */
+    height: 100vh;   /* Make the canvas element visually fill the viewport height */
+    z-index: -1;    /* Ensures it stays behind all other content */
+    display: block; /* Important for block-level behavior, removes default inline margins */
+    background: black; /* Set a background color for the canvas area */
+    pointer-events: none; /* CRUCIAL: Allows mouse events to pass through the canvas to elements below it */
 }
 
 .explore-header {
-  text-align: center;
-  padding: 2rem 1rem 1rem;
-  z-index: 2;
-  position: relative;
+    text-align: center;
+    padding: 2rem 1rem 1rem;
+    z-index: 2; /* Ensures it's above the canvas */
+    position: relative; /* Needed for z-index to take effect against fixed canvas */
 }
 
 .explore-header h1 {
-  font-size: 2.5rem;
-  text-shadow: 0 0 10px #0ff;
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px #0ff;
 }
 
 .explore-controls {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .explore-controls input,
 .explore-controls select {
-  padding: 0.7rem 1rem;
-  border-radius: 8px;
-  border: none;
-  font-size: 1rem;
-  background: rgba(255, 255, 255, 0.1);
-  color: #0ff;
-  outline: none;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: #0ff;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
 }
 
 .back-button {
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 0.6rem 1.5rem;
-  border-radius: 30px;
-  border: 2px solid #0ff;
-  background: transparent;
-  color: #0ff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.6rem 1.5rem;
+    border-radius: 30px;
+    border: 2px solid #0ff;
+    background: transparent;
+    color: #0ff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
 .back-button:hover {
-  background: #0ff;
-  color: #000;
+    background: #0ff;
+    color: #000;
 }
 
 .explore-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-  z-index: 2;
-  position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    z-index: 2; /* Ensures it's above the canvas */
+    position: relative; /* Needed for z-index to take effect against fixed canvas */
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(10px);
-  padding: 1.5rem;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
-  border: 1px solid rgba(0, 255, 255, 0.2);
-  transition: transform 0.3s;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    transition: transform 0.3s;
 }
 
 .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
 }
 
 .card-button {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.6rem 1.2rem;
-  border-radius: 20px;
-  background: #0ff;
-  color: #000;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease;
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    background: #0ff;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
 }
 
 .card-button:hover {
-  background: #0cc;
-  color: #fff;
+    background: #0cc;
+    color: #fff;
+}
+
+
+/* --- NEW: Birthday Modal Styles --- */
+#birthdayModalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95); /* Dark, semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* Ensures it's on top of everything */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* Smooth fade in/out */
+}
+
+#birthdayModalOverlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#birthdayModalContent {
+    position: relative;
+    background: linear-gradient(135deg, #ffc0cb, #ff69b4); /* Pink/Hot Pink Gradient */
+    border-radius: 25px;
+    padding: 3rem 2rem;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 0 50px rgba(255, 105, 180, 0.8), 0 0 100px rgba(255, 105, 180, 0.4); /* Strong pink glow */
+    text-align: center;
+    color: #fff; /* White text on pink background */
+    overflow: visible; /* Allow confetti to go outside bounds while animating */
+    transform: scale(0.9); /* Start slightly smaller for pop effect */
+    transition: transform 0.5s ease;
+    box-sizing: border-box; /* Include padding in width/height */
+}
+
+#birthdayModalOverlay.show #birthdayModalContent {
+    transform: scale(1); /* Pop to full size */
+}
+
+.close-modal-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+    z-index: 10; /* Above balloons and confetti */
+    line-height: 1; /* For cleaner x icon */
+    padding: 0; /* Remove default button padding */
+}
+
+.close-modal-btn:hover {
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+.modal-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff69b4;
+    color: #fff; /* Ensure it stays white */
+}
+
+.modal-input {
+    width: calc(100% - 40px); /* Adjust for padding */
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1.1rem;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+}
+
+.modal-input:focus {
+    border-color: #ffccff;
+    box-shadow: 0 0 15px rgba(255, 200, 255, 0.6);
+}
+
+.modal-button {
+    padding: 14px 30px;
+    background: #ff007f; /* Vibrant pink button */
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 0, 127, 0.5);
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.modal-button:hover {
+    transform: translateY(-3px);
+    background: #ff3399; /* Slightly lighter pink on hover */
+    box-shadow: 0 6px 20px rgba(255, 0, 127, 0.7);
+}
+
+.modal-message {
+    margin-top: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+#birthdayMessageContainer {
+    display: none; /* Hidden by default, shown after correct code */
+    animation: fadeIn 1s ease-out forwards;
+    padding-top: 20px; /* Space from heading */
+    position: relative;
+    z-index: 1; /* Below close button but above background elements */
+}
+
+#birthdayWishText {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    margin-top: 1rem;
+    color: #fff;
+    max-height: 30vh; /* Allows text content to scroll if it exceeds this height */
+    overflow-y: auto; /* Enable vertical scrolling for the text */
+    padding-right: 15px; /* Space for scrollbar to avoid text overlap */
+    /* Add custom scrollbar styling if desired for aesthetics */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #ff69b4 #f0f0f0; /* Firefox: thumb color track color */
+}
+
+/* Webkit browsers (Chrome, Safari) scrollbar */
+#birthdayWishText::-webkit-scrollbar {
+    width: 8px;
+}
+
+#birthdayWishText::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+#birthdayWishText::-webkit-scrollbar-thumb {
+    background-color: #ff69b4;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+
+/* --- Balloons Animation --- */
+.modal-balloon-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Allow clicks on balloons themselves, not pass through everything below */
+    pointer-events: none; /* Changed below for balloon */
+    overflow: hidden; /* Ensures balloons are clipped outside the modal boundary */
+    z-index: 0; /* Below content and confetti */
+}
+
+.balloon {
+    position: absolute;
+    bottom: -100px; /* Start below the visible area */
+    width: 40px;
+    height: 60px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; /* Balloon shape */
+    box-shadow: inset -5px -5px 0 rgba(0,0,0,0.2); /* Inner shadow for depth */
+    animation: floatUp 15s ease-in forwards infinite;
+    opacity: 0.8;
+    transform: scale(0.8);
+    /* NEW: Make balloons clickable */
+    pointer-events: auto; /* Allow mouse events on the balloon element */
+    cursor: pointer; /* Indicate it's clickable */
+}
+
+.balloon::before { /* String of the balloon */
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 0 0 50% 50%;
+}
+
+/* Animation for balloons floating up */
+@keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg) scale(0.8); opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-120vh) rotate(360deg) scale(1.2); opacity: 0; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+/* --- NEW: Confetti Sprinklers --- */
+#confettiContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allow clicks to pass through */
+    overflow: hidden; /* Keep confetti contained within the modal */
+    z-index: 5; /* Above balloons, below close button */
+}
+
+.confetti-particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: white; /* Default, will be overridden by JS */
+    border-radius: 50%; /* Circle shape */
+    opacity: 0; /* Start hidden */
+    transform: translate(-50%, -50%); /* Center based on its own size */
+    /* NEW: Longer confetti duration */
+    animation: confettiFall linear forwards;
+}
+
+/* NEW: Longer confetti duration */
+@keyframes confettiFall {
+    0% {
+        transform: translate(var(--x-start), var(--y-start)) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--x-end), var(--y-end)) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* --- NEW: Heart Particles (for balloon click) --- */
+.heart-particle {
+    position: absolute;
+    width: 15px; /* Size of the heart */
+    height: 15px;
+    background-color: red; /* Default heart color, can be varied by JS */
+    opacity: 0;
+    pointer-events: none; /* Do not interfere with clicks */
+    animation: heartPop 1s ease-out forwards;
+    z-index: 6; /* Above confetti */
+    /* Basic heart shape using pseudo-elements */
+}
+
+.heart-particle::before,
+.heart-particle::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: inherit; /* Inherit color from parent */
+}
+
+.heart-particle::before {
+    top: -50%;
+    left: 0;
+}
+
+.heart-particle::after {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(90deg);
+}
+
+
+@keyframes heartPop {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(var(--end-x), var(--end-y)) scale(1.2) rotate(360deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(var(--end-x), var(--end-y)) scale(0) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+
+/* Responsive adjustments for modal */
+@media (max-width: 480px) {
+    #birthdayModalContent {
+        padding: 2rem 1rem;
+    }
+    .modal-title {
+        font-size: 1.8rem;
+    }
+    .modal-text {
+        font-size: 1rem;
+    }
+    .modal-input {
+        font-size: 0.9rem;
+        padding: 12px 15px;
+    }
+    .modal-button {
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+    .balloon {
+        width: 30px;
+        height: 45px;
+    }
+    #birthdayWishText {
+        max-height: 25vh; /* Adjust for smaller screens */
+    }
+    .heart-particle {
+        width: 10px;
+        height: 10px;
+    }
 }

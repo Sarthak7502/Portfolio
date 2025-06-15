@@ -1,47 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Explore</title>
-  <link rel="stylesheet" href="explore.css">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore</title>
+    <link rel="stylesheet" href="explore.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <canvas id="bgCanvas"></canvas>
-  <div class="explore-header">
-    <h1>Explore Creations & Tools</h1>
-    <div class="explore-controls">
-      <input type="text" id="searchInput" placeholder="Search...">
-      <select id="categoryFilter">
-        <option value="all">All</option>
-        <option value="games">Games</option>
-        <option value="tools">Tools</option>
-        <option value="projects">Projects</option>
-      </select>
+    <canvas id="bgCanvas"></canvas>
+    <div class="explore-header">
+        <h1>Explore Creations & Tools</h1>
+        <div class="explore-controls">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <select id="categoryFilter">
+                <option value="all">All</option>
+                <option value="games">Games</option>
+                <option value="tools">Tools</option>
+                <option value="projects">Projects</option>
+                <option value="special">Special</option> </select>
+        </div>
+        <a href="index.html" class="back-button">← Back to Home</a>
     </div>
-    <a href="index.html" class="back-button">← Back to Home</a>
-  </div>
 
-  <div class="explore-grid" id="cardContainer">
-    <div class="card" data-category="games">
-      <h3>Logic Puzzle Game</h3>
-      <p>Challenge your brain with logical puzzles.</p>
-      <a href="#" class="card-button">Play Now</a>
-    </div>
-    <div class="card" data-category="tools">
-      <h3>Gesture Video Controller</h3>
-      <p>Control YouTube using hand gestures.</p>
-      <a href="#" class="card-button">Use Tool</a>
-    </div>
-    <div class="card" data-category="projects">
-      <h3>Voice Gmail</h3>
-      <p>Manage emails using just your voice.</p>
-      <a href="#" class="card-button">Try Now</a>
-    </div>
-    <!-- Add more cards as needed -->
-  </div>
+    <div class="explore-grid" id="cardContainer">
+        <div class="card" data-category="games">
+            <h3>Logic Puzzle Game</h3>
+            <p>Challenge your brain with logical puzzles.</p>
+            <a href="#" class="card-button">Play Now</a>
+        </div>
+        <div class="card" data-category="tools">
+            <h3>Gesture Video Controller</h3>
+            <p>Control YouTube using hand gestures.</p>
+            <a href="#" class="card-button">Use Tool</a>
+        </div>
+        <div class="card" data-category="projects">
+            <h3>Voice Gmail</h3>
+            <p>Manage emails using just your voice.</p>
+            <a href="#" class="card-button">Try Now</a>
+        </div>
+        <div class="card" data-category="special">
+            <h3>Special Gift Card</h3>
+            <p>Unlock a personalized surprise!</p>
+            <button class="card-button" id="availGiftCardBtn">Avail Card</button>
+        </div>
+        </div>
 
-  <script src="explore.js"></script>
+    <div id="birthdayModalOverlay">
+        <div id="birthdayModalContent">
+            <button id="closeBirthdayModalBtn" class="close-modal-btn">&times;</button>
+
+            <div id="codeEntry">
+                <h2 class="modal-title">Enter Your Secret Code</h2>
+                <input type="password" id="codeInput" placeholder="Enter code here..." class="modal-input">
+                <button id="submitCodeBtn" class="modal-button">Unlock Surprise!</button>
+                <p id="codeMessage" class="modal-message"></p>
+            </div>
+
+            <div id="birthdayMessageContainer">
+                <h2 id="birthdayWishHeading" class="modal-title"></h2>
+                <p id="birthdayWishText" class="modal-text"></p>
+                <div id="balloonContainer" class="modal-balloon-container"></div>
+                <div id="confettiContainer"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.min.js"></script>
+    <script src="explore.js"></script>
 </body>
 </html>
