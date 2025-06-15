@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     canvas.style.left = "0";
     canvas.style.zIndex = "-1";
     document.body.style.margin = "0";
-    document.body.style.overflow = "hidden";
+    canvas.style.pointerEvents = "none";
     initStars();
   }
 
