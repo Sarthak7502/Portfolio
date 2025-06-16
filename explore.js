@@ -441,7 +441,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     createConfetti(); // Still show confetti
 
                     // Populate the message for your sister
-                    if (birthdayWishHeading) birthdayWishHeading.textContent = "To My Amazing CS Team...";
+                    if (birthdayWishHeading) birthdayWishHeading.textContent = "To My Amazing Shivani..";
                     if (birthdayWishText) birthdayWishText.innerHTML = `
                         Dearest Shivanii, <br><br>
                         It's truly a blessing to have you on the team. Not only do you bring brilliant insights and dedication to every task, but your guidance and warmth make our workplace feel like family. Thank you for being such an incredible person and for always being like an elder sister to me. Your support means the world! 💖<br><br>
