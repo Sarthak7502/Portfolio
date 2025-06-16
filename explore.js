@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const SECRET_CODE_NEHA = "NEHA2122"; // Secret code for Neha
     const SECRET_CODE_DIVPREET = "DIVBRO"; // Secret code for Neha
     const SECRET_CODE_SISTER = "SISLOVE"; // New secret code for your sister
-    const SECRET_CODE_TEAM = "CSTEAM"; // New secret code for your CS Team
+    const SECRET_CODE_SHIVANI = "SHIVANI"; // New secret code for your CS Team
 
     // Directly set the song filename here
     const BIRTHDAY_SONG_FILE = "happy-birthday-357371.mp3";
@@ -429,8 +429,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         Your Broo
                     `;
                 }, 1500);
-            }else if (enteredCode === SECRET_CODE_TEAM) { // New code for your sister!
-                codeMessage.textContent = "✅ Code accepted! For my CS Team...";
+            }else if (enteredCode === SECRET_CODE_SHIVANI) { // New code for your sister!
+                codeMessage.textContent = "✅ Code accepted! Special message for gorgeous Shivanii...";
                 codeMessage.style.color = "#00ff00";
 
                 setTimeout(() => {
@@ -443,11 +443,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     // Populate the message for your sister
                     if (birthdayWishHeading) birthdayWishHeading.textContent = "To My Amazing CS Team...";
                     if (birthdayWishText) birthdayWishText.innerHTML = `
-                        Hey Team,<br><br>
-                        It's truly inspiring to work alongside such brilliant and dedicated minds. Every challenge we face, we conquer together, driven by our shared passion for GoSharpener. Thank you for your hard work, collaboration, and the positive energy you bring every single day.<br><br>
-                        Keep building, and keep being the amazing team you are. The future is ours to create!<br><br>
-                        Best,<br>
-                        Your Team Mate
+                        Dearest Shivanii, <br><br>
+                        It's truly a blessing to have you on the team. Not only do you bring brilliant insights and dedication to every task, but your guidance and warmth make our workplace feel like family. Thank you for being such an incredible person and for always being like an elder sister to me. Your support means the world! 💖<br><br>
+                        Keep shining your light and inspiring me always. We're so lucky to have you! ✨😊<br><br>
+                        With immense respect & affection,<br>
+                        Witty Sarthak ❤️
                     `;
                 }, 1500);
             } else {
