@@ -138,6 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const SECRET_CODE_NEHA = "NEHA2122"; // Secret code for Neha
     const SECRET_CODE_DIVPREET = "DIVBRO"; // Secret code for Neha
     const SECRET_CODE_SISTER = "SISLOVE"; // New secret code for your sister
+    const SECRET_CODE_TEAM = "CSTEAM"; // New secret code for your CS Team
 
     // Directly set the song filename here
     const BIRTHDAY_SONG_FILE = "happy-birthday-357371.mp3";
@@ -388,7 +389,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     `;
                 }, 1500);
             } else if (enteredCode === SECRET_CODE_DIVPREET) {
-                codeMessage.textContent = "✅ Code accepted! Here's a special message for Brother!";
+                codeMessage.textContent = "✅ Code accepted! Here's a special message for my Brother!";
                 codeMessage.style.color = "#00ff00";
 
                 setTimeout(() => {
@@ -405,7 +406,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         It's awesome having you not just as a brother, but as one of my best friends too. From all our shared laughs and crazy adventures to being there for each other through thick and thin, you truly make life better.<br><br>
                         Thanks for being you – reliable, fun, and always up for anything. Here's to many more years of good times and continuing to conquer everything together!<br><br>
                         With much warmth,<br>
-                        Tour Bachpan Ka Dost
+                        Your Bachpan Ka Dost
                     `;
                 }, 1500);
             }else if (enteredCode === SECRET_CODE_SISTER) { // New code for your sister!
@@ -426,6 +427,27 @@ document.addEventListener("DOMContentLoaded", () => {
                         Through thick and thin, you've always been there. Thank you for being not just a sister, but a wonderful friend. May your journey ahead be filled with dreams come true, strength, and joy.<br><br>
                         I cherish our bond more than words can say. Love you always!<br><br>
                         Your Broo
+                    `;
+                }, 1500);
+            }else if (enteredCode === SECRET_CODE_TEAM) { // New code for your sister!
+                codeMessage.textContent = "✅ Code accepted! For my CS Team...";
+                codeMessage.style.color = "#00ff00";
+
+                setTimeout(() => {
+                    if (codeEntry) codeEntry.style.display = 'none';
+                    if (birthdayMessageContainer) birthdayMessageContainer.style.display = 'block';
+                    // No music for this code
+                    createBalloons(); // Still show balloons
+                    createConfetti(); // Still show confetti
+
+                    // Populate the message for your sister
+                    if (birthdayWishHeading) birthdayWishHeading.textContent = "To My Amazing Sister! 💖";
+                    if (birthdayWishText) birthdayWishText.innerHTML = `
+                        Hey Team,<br><br>
+                        It's truly inspiring to work alongside such brilliant and dedicated minds. Every challenge we face, we conquer together, driven by our shared passion for GoSharpener. Thank you for your hard work, collaboration, and the positive energy you bring every single day.<br><br>
+                        Keep building, and keep being the amazing team you are. The future is ours to create!<br><br>
+                        Best,<br>
+                        Your Team Mate
                     `;
                 }, 1500);
             } else {
