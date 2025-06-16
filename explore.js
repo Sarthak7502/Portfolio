@@ -441,7 +441,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     createConfetti(); // Still show confetti
 
                     // Populate the message for your sister
-                    if (birthdayWishHeading) birthdayWishHeading.textContent = "To My Amazing Sister! 💖";
+                    if (birthdayWishHeading) birthdayWishHeading.textContent = "To My Amazing CS Team...";
                     if (birthdayWishText) birthdayWishText.innerHTML = `
                         Hey Team,<br><br>
                         It's truly inspiring to work alongside such brilliant and dedicated minds. Every challenge we face, we conquer together, driven by our shared passion for GoSharpener. Thank you for your hard work, collaboration, and the positive energy you bring every single day.<br><br>
