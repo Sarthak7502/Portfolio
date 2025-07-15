@@ -139,6 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const SECRET_CODE_DIVPREET = "DIVBRO"; // Secret code for Neha
     const SECRET_CODE_SISTER = "SISLOVE"; // New secret code for your sister
     const SECRET_CODE_SHIVANI = "SHIVANI"; // New secret code for your CS Team
+    const SECRET_CODE_POOJA = "DATELOVE"; // Secret code for Pooja
 
     // Directly set the song filename here
     const BIRTHDAY_SONG_FILE = "happy-birthday-357371.mp3";
@@ -448,6 +449,30 @@ document.addEventListener("DOMContentLoaded", () => {
                         Keep shining your light and inspiring me always. We're so lucky to have you! ✨😊<br><br>
                         With immense respect & affection,<br>
                         Witty Sarthak ❤️
+                    `;
+                }, 1500);
+            }if (enteredCode === SECRET_CODE_POOJA) {
+                codeMessage.textContent = "✅ Code accepted! Preparing Nysa's surprise...";
+                codeMessage.style.color = "#00ff00";
+
+                setTimeout(() => {
+                    if (codeEntry) codeEntry.style.display = 'none';
+                    if (birthdayMessageContainer) birthdayMessageContainer.style.display = 'block';
+                    playBirthdaySongFile(); // Play the hardcoded song file
+                    createBalloons(); // Start the balloon animation
+                    createConfetti(); // Start confetti animation
+
+                    // Populate personalized birthday wish for Nysa
+                    if (birthdayWishHeading) birthdayWishHeading.textContent = "Happy 23rd Birthday, Pooja! 💖";
+                    if (birthdayWishText) birthdayWishText.innerHTML = `
+                        My loving month twin, Pooja! 🎉<br><br>
+                        🌸 Happy Birthday to someone who made even a normal day feel special just by being in it.
+                        I hope today brings you the same kind of joy, calm, and warmth that you naturally carry in your vibe.
+                        You truly deserve all the smiles, soft moments, and beautiful surprises this year.
+                        I’m really glad I met you — and I hope this birthday is just the beginning of amazing things ahead. ✨
+                        Enjoy your day to the fullest…❤❤<br><br>
+                        Lots of love,<br>
+                        To be love of your life ❤️
                     `;
                 }, 1500);
             } else {
