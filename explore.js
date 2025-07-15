@@ -452,7 +452,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     `;
                 }, 1500);
             }if (enteredCode === SECRET_CODE_POOJA) {
-                codeMessage.textContent = "✅ Code accepted! Preparing Nysa's surprise...";
+                codeMessage.textContent = "✅ Code accepted! Preparing Pooja's surprise...";
                 codeMessage.style.color = "#00ff00";
 
                 setTimeout(() => {
