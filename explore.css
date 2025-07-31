@@ -94,7 +94,7 @@ canvas#bgCanvas { /* Target your background canvas by its ID */
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
     border: 1px solid rgba(0, 255, 255, 0.2);
     transition: transform 0.3s;
-    height: 100%; /* Ensure consistent height across cards */
+    height: 80%; /* Ensure consistent height across cards */
     position: relative; /* Needed if using absolute inside */
 }
 
