@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const SECRET_CODE_DIVPREET = "DIVBRO"; // Secret code for Neha
     const SECRET_CODE_SISTER = "SISLOVE"; // New secret code for your sister
     const SECRET_CODE_SHIVANI = "SHIVANI"; // New secret code for your CS Team
-    const SECRET_CODE_POOJA = "DATELOVE"; // Secret code for Pooja
+    const SECRET_CODE_YAMINI = "FUZZYY"; // Secret code for Pooja
 
     // Directly set the song filename here
     const BIRTHDAY_SONG_FILE = "happy-birthday-357371.mp3";
@@ -451,28 +451,28 @@ document.addEventListener("DOMContentLoaded", () => {
                         Witty Sarthak ❤️
                     `;
                 }, 1500);
-            }if (enteredCode === SECRET_CODE_POOJA) {
-                codeMessage.textContent = "✅ Code accepted! Preparing Pooja's surprise...";
+            }if (enteredCode === SECRET_CODE_YAMINI) {
+                codeMessage.textContent = "✅ Code accepted! A secret msg for Yaminii...";
                 codeMessage.style.color = "#00ff00";
 
                 setTimeout(() => {
                     if (codeEntry) codeEntry.style.display = 'none';
                     if (birthdayMessageContainer) birthdayMessageContainer.style.display = 'block';
-                    playBirthdaySongFile(); // Play the hardcoded song file
+                    // No music for this code
                     createBalloons(); // Start the balloon animation
                     createConfetti(); // Start confetti animation
 
-                    // Populate personalized birthday wish for Nysa
-                    if (birthdayWishHeading) birthdayWishHeading.textContent = "Happy 23rd Birthday, Pooja! 💖";
+                    // Populate the message for your Yamini
+                    if (birthdayWishHeading) birthdayWishHeading.textContent = "Thank Youu, Yaminii ❤️";
                     if (birthdayWishText) birthdayWishText.innerHTML = `
-                        My loving month twin, Pooja! 🎉<br><br>
-                        🌸 Happy Birthday to someone who made even a normal day feel special just by being in it.
-                        I hope today brings you the same kind of joy, calm, and warmth that you naturally carry in your vibe.
-                        You truly deserve all the smiles, soft moments, and beautiful surprises this year.
-                        I’m really glad I met you — and I hope this birthday is just the beginning of amazing things ahead. ✨
-                        Enjoy your day to the fullest…❤❤<br><br>
-                        Lots of love,<br>
-                        To be love of your life ❤️
+                        Heyy, Fuzzy Rainy!!<br><br>
+                        Thank you for being there!! it honestly means a lot. You don’t even know
+                        what I went through in my personal life recently, but just talking to you makes things feel lighter.
+                        Whether it’s work stress or life being a mess, somehow it all feels more manageable after
+                        our chats. You might not wear a cape, but you definitely have superhero energy. Really
+                        grateful to have such a coool & glamourous friend like you. 💛<br><br>
+                        Your Neww Friendd<br>
+                        Sarthak 😊
                     `;
                 }, 1500);
             } else {
