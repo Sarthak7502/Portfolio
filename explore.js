@@ -476,7 +476,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         Sarthak 😊
                     `;
                 }, 1500);
-                else if (enteredCode === SECRET_CODE_ABHI) { // New code for your Abhi!
+            }else if (enteredCode === SECRET_CODE_ABHI) { // New code for your Abhi!
                 codeMessage.textContent = "✅ Code accepted! Special message for sassyy Abhilasha...";
                 codeMessage.style.color = "#00ff00";
 
