@@ -138,8 +138,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const SECRET_CODE_NEHA = "NEHA2122"; // Secret code for Neha
     const SECRET_CODE_DIVPREET = "DIVBRO"; // Secret code for Neha
     const SECRET_CODE_SISTER = "SISLOVE"; // New secret code for your sister
-    const SECRET_CODE_SHIVANI = "SHIVANI"; // New secret code for your CS Team
-    const SECRET_CODE_YAMINI = "FUZZYY"; // Secret code for Pooja
+    const SECRET_CODE_SHIVANI = "SHIVANI"; // New secret code for Shivani
+    const SECRET_CODE_YAMINI = "FUZZYY"; // Secret code for Yamini
+    const SECRET_CODE_ABHI = "LOVE2924"; // Secret code for Abhi
 
     // Directly set the song filename here
     const BIRTHDAY_SONG_FILE = "happy-birthday-357371.mp3";
@@ -430,7 +431,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         Your Broo
                     `;
                 }, 1500);
-            }else if (enteredCode === SECRET_CODE_SHIVANI) { // New code for your sister!
+            }else if (enteredCode === SECRET_CODE_SHIVANI) { // New code for your Shivani!
                 codeMessage.textContent = "✅ Code accepted! Special message for gorgeous Shivanii...";
                 codeMessage.style.color = "#00ff00";
 
@@ -451,7 +452,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         Witty Sarthak ❤️
                     `;
                 }, 1500);
-            }if (enteredCode === SECRET_CODE_YAMINI) {
+            }else if (enteredCode === SECRET_CODE_YAMINI) {
                 codeMessage.textContent = "✅ Code accepted! A secret msg for Yaminii...";
                 codeMessage.style.color = "#00ff00";
 
@@ -473,6 +474,27 @@ document.addEventListener("DOMContentLoaded", () => {
                         grateful to have such a coool & glamourous friend like you. 💛<br><br>
                         Your Neww Friendd<br>
                         Sarthak 😊
+                    `;
+                }, 1500);
+                else if (enteredCode === SECRET_CODE_ABHI) { // New code for your Abhi!
+                codeMessage.textContent = "✅ Code accepted! Special message for sassyy Abhilasha...";
+                codeMessage.style.color = "#00ff00";
+
+                setTimeout(() => {
+                    if (codeEntry) codeEntry.style.display = 'none';
+                    if (birthdayMessageContainer) birthdayMessageContainer.style.display = 'block';
+                    // No music for this code
+                    createBalloons(); // Still show balloons
+                    createConfetti(); // Still show confetti
+
+                    // Populate the message for your sister
+                    if (birthdayWishHeading) birthdayWishHeading.textContent = "To My Lovee Abhii";
+                    if (birthdayWishText) birthdayWishText.innerHTML = `
+                        Sweeet Abhi, <br><br>
+                        It feels so special to have met you. Even in such a short time, your presence brings so much positivity and warmth. The way you carry yourself, the kindness in your words, and the spark in your smile already make a big difference to me. 💖
+                        I’m truly grateful our paths crossed, and I’m excited to see where this journey takes us. Keep being your wonderful self, you’re already inspiring me in more ways than you know. ✨😊<br><br>
+                        With immense respect & affection,<br>
+                        Yourr Neww Lovee ❤️
                     `;
                 }, 1500);
             } else {
