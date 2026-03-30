@@ -391,7 +391,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 setTimeout(() => {
                     if (codeEntry) codeEntry.style.display = 'none';
                     if (birthdayMessageContainer) birthdayMessageContainer.style.display = 'block';
-                    // No music for this code
+                    // No ic for this code
                     createBalloons(); // Still show balloons
                     createConfetti(); // Still show confetti
 
@@ -417,7 +417,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     createConfetti(); // Still show confetti
 
                     // Populate the message for your sister
-                    if (birthdayWishHeading) birthdayWishHeading.textContent = "To My Dearest Muskaan";
+                    if (birthdayWishHeading) birthdayWishHeading.textContent = "To My Dearest Muskan";
                     if (birthdayWishText) birthdayWishText.innerHTML = `
                         Heyy Pia, <br><br>
                         It feels truly special to have met you, there’s a warmth in your presence that quietly makes everything feel a little lighter. 💫
