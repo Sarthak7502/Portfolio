@@ -134,10 +134,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const balloonContainer = document.getElementById("balloonContainer");
     const confettiContainer = document.getElementById("confettiContainer"); // Get confetti container
 
-    const SECRET_CODE_DIVPREET = "DIVBRO"; // Secret code for Neha
+    const SECRET_CODE_DIVPREET = "DIVBRO"; // Secret code for Divpreet
     const SECRET_CODE_SISTER = "SISLOVE"; // New secret code for your sister
     const SECRET_CODE_SHIVANI = "SHIVANI"; // New secret code for Shivani
-    const SECRET_CODE_KASHISH = "PIA20"; // Secret code for Abhi
+    const SECRET_CODE_KASHISH = "PIA20"; // Secret code for Kashish
 
     // Directly set the song filename here
     const BIRTHDAY_SONG_FILE = "happy-birthday-357371.mp3";
@@ -406,7 +406,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     `;
                 }, 1500);
             }else if (enteredCode === SECRET_CODE_KASHISH) { // New code for your Abhi!
-                codeMessage.textContent = "✅ Code accepted! Special message for Muskaan...";
+                codeMessage.textContent = "✅ Code accepted! Special message for Kashish...";
                 codeMessage.style.color = "#00ff00";
 
                 setTimeout(() => {
@@ -423,7 +423,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         It feels truly special to have met you, there’s a warmth in your presence that quietly makes everything feel a little lighter. 💫
                         Even in such a short time, you’ve brought a sense of calm and happiness I didn’t expect. I may not be perfect, but I’ll always try to be a reason behind your smile, every day 😊<br><br>
                         With immense respect & affection❤️<br>
-                        Sarthak 🫶
+                        - Sarthak 🫶
                     `;
                 }, 1500);
             } else {
