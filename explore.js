@@ -134,13 +134,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const balloonContainer = document.getElementById("balloonContainer");
     const confettiContainer = document.getElementById("confettiContainer"); // Get confetti container
 
-    const SECRET_CODE_NYSA = "NYSA20"; // Secret code for Nysa's wish
-    const SECRET_CODE_NEHA = "NEHA2122"; // Secret code for Neha
     const SECRET_CODE_DIVPREET = "DIVBRO"; // Secret code for Neha
     const SECRET_CODE_SISTER = "SISLOVE"; // New secret code for your sister
     const SECRET_CODE_SHIVANI = "SHIVANI"; // New secret code for Shivani
-    const SECRET_CODE_YAMINI = "FUZZYY"; // Secret code for Yamini
-    const SECRET_CODE_ABHI = "LOVE2924"; // Secret code for Abhi
+    const SECRET_CODE_KASHISH = "PIA20"; // Secret code for Abhi
 
     // Directly set the song filename here
     const BIRTHDAY_SONG_FILE = "happy-birthday-357371.mp3";
@@ -346,51 +343,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             const enteredCode = codeInput.value.toUpperCase();
 
-            if (enteredCode === SECRET_CODE_NYSA) {
-                codeMessage.textContent = "✅ Code accepted! Preparing Nysa's surprise...";
-                codeMessage.style.color = "#00ff00";
-
-                setTimeout(() => {
-                    if (codeEntry) codeEntry.style.display = 'none';
-                    if (birthdayMessageContainer) birthdayMessageContainer.style.display = 'block';
-                    playBirthdaySongFile(); // Play the hardcoded song file
-                    createBalloons(); // Start the balloon animation
-                    createConfetti(); // Start confetti animation
-
-                    // Populate personalized birthday wish for Nysa
-                    if (birthdayWishHeading) birthdayWishHeading.textContent = "Happy 20th Birthday, Nysa! 💖";
-                    if (birthdayWishText) birthdayWishText.innerHTML = `
-                        My dearest date twin, Nysa! 🎉<br><br>
-                        Can you believe it's been 20 years since we both arrived on the 24th? It's pretty cool how we share that day, even if our months are different! Time flies when you're having a blast with an amazing friend like you!<br><br>
-                        To my incredible, witty, and truly special twin, may your 20s be filled with boundless joy, exciting adventures, and all the happiness you deserve.<br><br>
-                        Cheers to many more years of shared laughter, silly moments, and unforgettable memories. You're truly one in a million, and I'm so grateful to have you as my friend.<br><br>
-                        Wishing you the happiest birthday ever! Keep shining bright! ✨🎂<br><br>
-                        Lots of love,<br>
-                        Your Date Twin!
-                    `;
-                }, 1500);
-            } else if (enteredCode === SECRET_CODE_NEHA) {
-                codeMessage.textContent = "✅ Code accepted! Here's a special message for you Neha!";
-                codeMessage.style.color = "#00ff00";
-
-                setTimeout(() => {
-                    if (codeEntry) codeEntry.style.display = 'none';
-                    if (birthdayMessageContainer) birthdayMessageContainer.style.display = 'block';
-                    // No music for this code
-                    createBalloons(); // Still show balloons
-                    createConfetti(); // Still show confetti
-
-                    // Populate a different message
-                    if (birthdayWishHeading) birthdayWishHeading.textContent = "A Special Message Just for You! 🌟";
-                    if (birthdayWishText) birthdayWishText.innerHTML = `
-                        Dearest friend,<br><br>
-                        Life is so much brighter with you in it. Thank you for your kindness, your laughter, and your unwavering support. May your days be filled with endless happiness and incredible new experiences.<br><br>
-                        No matter what, remember how much you are appreciated and loved. Wishing you all the best!<br><br>
-                        With much warmth,<br>
-                        Mr. Popular CSE
-                    `;
-                }, 1500);
-            } else if (enteredCode === SECRET_CODE_DIVPREET) {
+            if (enteredCode === SECRET_CODE_DIVPREET) {
                 codeMessage.textContent = "✅ Code accepted! Here's a special message for my Brother!";
                 codeMessage.style.color = "#00ff00";
 
@@ -452,32 +405,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         Witty Sarthak ❤️
                     `;
                 }, 1500);
-            }else if (enteredCode === SECRET_CODE_YAMINI) {
-                codeMessage.textContent = "✅ Code accepted! A secret msg for Yaminii...";
-                codeMessage.style.color = "#00ff00";
-
-                setTimeout(() => {
-                    if (codeEntry) codeEntry.style.display = 'none';
-                    if (birthdayMessageContainer) birthdayMessageContainer.style.display = 'block';
-                    // No music for this code
-                    createBalloons(); // Start the balloon animation
-                    createConfetti(); // Start confetti animation
-
-                    // Populate the message for your Yamini
-                    if (birthdayWishHeading) birthdayWishHeading.textContent = "Thank Youu, Yaminii ❤️";
-                    if (birthdayWishText) birthdayWishText.innerHTML = `
-                        Heyy, Fuzzy Rainy!!<br><br>
-                        Thank you for being there!! it honestly means a lot. You don’t even know
-                        what I went through in my personal life recently, but just talking to you makes things feel lighter.
-                        Whether it’s work stress or life being a mess, somehow it all feels more manageable after
-                        our chats. You might not wear a cape, but you definitely have superhero energy. Really
-                        grateful to have such a coool & glamourous friend like you. 💛<br><br>
-                        Your Neww Friendd<br>
-                        Sarthak 😊
-                    `;
-                }, 1500);
-            }else if (enteredCode === SECRET_CODE_ABHI) { // New code for your Abhi!
-                codeMessage.textContent = "✅ Code accepted! Special message for sassyy Abhilasha...";
+            }else if (enteredCode === SECRET_CODE_KASHISH) { // New code for your Abhi!
+                codeMessage.textContent = "✅ Code accepted! Special message for Muskaan...";
                 codeMessage.style.color = "#00ff00";
 
                 setTimeout(() => {
@@ -488,13 +417,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     createConfetti(); // Still show confetti
 
                     // Populate the message for your sister
-                    if (birthdayWishHeading) birthdayWishHeading.textContent = "To My Lovee Abhii";
+                    if (birthdayWishHeading) birthdayWishHeading.textContent = "To My Dearest Muskaan";
                     if (birthdayWishText) birthdayWishText.innerHTML = `
-                        Sweeet Abhi, <br><br>
-                        It feels so special to have met you. Even in such a short time, your presence brings so much positivity and warmth. The way you carry yourself, the kindness in your words, and the spark in your smile already make a big difference to me. 💖
-                        I’m truly grateful our paths crossed, and I’m excited to see where this journey takes us. Keep being your wonderful self, you’re already inspiring me in more ways than you know. ✨😊<br><br>
-                        With immense respect & affection,<br>
-                        Yourr Neww Lovee ❤️
+                        Heyy Pia, <br><br>
+                        It feels truly special to have met you, there’s a warmth in your presence that quietly makes everything feel a little lighter. 💫
+                        Even in such a short time, you’ve brought a sense of calm and happiness I didn’t expect. I may not be perfect, but I’ll always try to be a reason behind your smile, every day 😊<br><br>
+                        With immense respect & affection❤️<br>
+                        Sarthak 🫶
                     `;
                 }, 1500);
             } else {
