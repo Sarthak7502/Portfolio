@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const SECRET_CODE_DIVPREET = "DIVBRO"; // Secret code for Divpreet
     const SECRET_CODE_SISTER = "SISLOVE"; // New secret code for your sister
     const SECRET_CODE_SHIVANI = "SHIVANI"; // New secret code for Shivani
-    const SECRET_CODE_KASHISH = "PIA20"; // Secret code for Kashish
+    const SECRET_CODE_TEENA = "HARLEEN"; // Secret code for Teena
 
     // Directly set the song filename here
     const BIRTHDAY_SONG_FILE = "happy-birthday-357371.mp3";
@@ -405,8 +405,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         Witty Sarthak ❤️
                     `;
                 }, 1500);
-            }else if (enteredCode === SECRET_CODE_KASHISH) { // New code for your Abhi!
-                codeMessage.textContent = "✅ Code accepted! Special message for Kashish...";
+            }else if (enteredCode === SECRET_CODE_HARLEEN) {
+                codeMessage.textContent = "✅ Code accepted! Special message for Teena...";
                 codeMessage.style.color = "#00ff00";
 
                 setTimeout(() => {
@@ -417,12 +417,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     createConfetti(); // Still show confetti
 
                     // Populate the message for your sister
-                    if (birthdayWishHeading) birthdayWishHeading.textContent = "To My Dearest Muskan";
+                    if (birthdayWishHeading) birthdayWishHeading.textContent = "To My Dearest Teena";
                     if (birthdayWishText) birthdayWishText.innerHTML = `
-                        Heyy Pia, <br><br>
-                        It feels truly special to have met you, there’s a warmth in your presence that quietly makes everything feel a little lighter. 💫
-                        Even in such a short time, you’ve brought a sense of calm and happiness I didn’t expect. I may not be perfect, but I’ll always try to be a reason behind your smile, every day 😊<br><br>
-                        With immense respect & affection❤️<br>
+                        Hii Teena, <br><br>
+                        You came into my life unexpectedly, but somehow you've already managed to bring a little peace and a lot of smiles with you😊
+                        I genuinely enjoyed our call, the way you talk, your voice, your maturity, and the dedication with which you've handled life from such a young age really left an impression on me. The hard work you've put in to build yourself and manage everything so independently is something I truly admire.<br><br>
+                        And honestly, no matter how my day goes, seeing a message from you makes it a little better. So thank you for being you🌸<br>
                         - Sarthak 🫶
                     `;
                 }, 1500);
