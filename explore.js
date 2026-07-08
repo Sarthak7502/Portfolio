@@ -405,7 +405,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         Witty Sarthak ❤️
                     `;
                 }, 1500);
-            }else if (enteredCode === SECRET_CODE_HARLEEN) {
+            }else if (enteredCode === SECRET_CODE_TEENA) {
                 codeMessage.textContent = "✅ Code accepted! Special message for Teena...";
                 codeMessage.style.color = "#00ff00";
 
@@ -417,7 +417,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     createConfetti(); // Still show confetti
 
                     // Populate the message for your sister
-                    if (birthdayWishHeading) birthdayWishHeading.textContent = "To My Dearest Teena";
+                    if (birthdayWishHeading) birthdayWishHeading.textContent = "To Dearest Teena";
                     if (birthdayWishText) birthdayWishText.innerHTML = `
                         Hii Teena, <br><br>
                         You came into my life unexpectedly, but somehow you've already managed to bring a little peace and a lot of smiles with you😊
